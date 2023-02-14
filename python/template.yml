@@ -55,14 +55,16 @@ spec:
 
   steps:
     - id: publish
-      if: ${{ parameters.dryRun !== true }}
       name: Publish
       action: publish:githubTeam
       input:
         allowedHosts:
           - github.com
-        description: This is ${{ parameters.name }}
-        repoUrl: ${{ parameters.repoUrl }}
+        url: ${{ parameters.repoUrl | parseRepoUrl }
+        values:
+          projectName: ${{ parameters.name }}
+          pythonVersion: ${{ parameters.version }}
+          destination: ${{ parameters.repoUrl | parseRepoUrl }
     
   output:
     links:
