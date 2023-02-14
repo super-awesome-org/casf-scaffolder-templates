@@ -57,7 +57,7 @@ spec:
     - id: publish
       if: ${{ parameters.dryRun !== true }}
       name: Publish
-      action: publish:githubTean
+      action: publish:githubTeam
       input:
         allowedHosts:
           - github.com
