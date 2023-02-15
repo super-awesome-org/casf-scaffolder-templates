@@ -35,7 +35,6 @@ spec:
     - title: Choose a location
       required:
         - repoUrl
-        - dryRun
       properties:
         repoUrl:
           title: Organisation
@@ -44,10 +43,6 @@ spec:
           ui:options:
             allowedHosts:
               - github.com
-        dryRun:
-          title: Only perform a dry run, don't publish anything
-          type: boolean
-          default: false
 
   steps:
     - id: publish
@@ -58,9 +53,7 @@ spec:
           - github.com
         url: ${{ parameters.repoUrl | parseRepoUrl }
         values:
-          projectName: ${{ parameters.name }}
-          pythonVersion: ${{ parameters.version }}
-          destination: ${{ parameters.repoUrl | parseRepoUrl }
+          teamName: ${{ parameters.name }}
     
   output:
     links:
