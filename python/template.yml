@@ -2,8 +2,8 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: casf-python-template
-  title: test 124
-  description: CASF python template 
+  title: asd
+  description: CASF python template 1
   tags:
     - casf
     - python
