@@ -40,6 +40,9 @@ spec:
           title: Organisation
           type: string
           ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
 
   steps:
     - id: publish
