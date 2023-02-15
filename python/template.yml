@@ -39,9 +39,7 @@ spec:
         repoUrl:
           title: Organisation
           type: string
-          ui:options:
-            allowedHosts:
-              - github.com
+          ui:field: RepoUrlPicker
 
   steps:
     - id: publish
