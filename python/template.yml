@@ -51,9 +51,8 @@ spec:
       input:
         allowedHosts:
           - github.com
-        url: ${{ parameters.repoUrl | parseRepoUrl }
-        values:
-          teamName: ${{ parameters.name }}
+        description: This is ${{ parameters.name }}
+        repoUrl: ${{ parameters.repoUrl }}
     
   output:
     links:
