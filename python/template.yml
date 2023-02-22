@@ -43,6 +43,8 @@ spec:
           ui:options:
             allowedHosts:
               - github.com
+           allowedRepos:
+              - backstage
 
   steps:
     - id: publish
