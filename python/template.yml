@@ -53,6 +53,7 @@ spec:
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
         teamName: ${{ parameters.name }}
+        teamMembers: ${{ parameters.members}}
     
   output:
     links:
