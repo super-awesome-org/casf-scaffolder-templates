@@ -55,6 +55,7 @@ spec:
           - github.com
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
+        teamName: ${{ parameters.name }}
     
   output:
     links:
