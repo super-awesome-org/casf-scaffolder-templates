@@ -25,7 +25,7 @@ spec:
             rows: 5
         members:
           title: Members
-          type: string[]
+          type: array
           description: Unique name of the component
           ui:autofocus: true
           ui:options:
