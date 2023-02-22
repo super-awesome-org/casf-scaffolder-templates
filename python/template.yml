@@ -24,14 +24,11 @@ spec:
           ui:options:
             rows: 5
         members:
-          title: Members
           type: array
-          description: Unique name of the component
           items:
             type: string
-          ui:autofocus: true
           ui:options:
-            rows: 5
+            orderable: false
 
     - title: Choose a location
       required:
