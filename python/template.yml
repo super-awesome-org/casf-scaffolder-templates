@@ -27,6 +27,9 @@ spec:
           title: Members
           type: array
           description: Unique name of the component
+          items:
+            types:
+              - string
           ui:autofocus: true
           ui:options:
             rows: 5
