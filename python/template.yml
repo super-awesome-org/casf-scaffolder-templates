@@ -28,8 +28,7 @@ spec:
           type: array
           description: Unique name of the component
           items:
-            types:
-              - string
+            type: string
           ui:autofocus: true
           ui:options:
             rows: 5
