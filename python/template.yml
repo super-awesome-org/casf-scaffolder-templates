@@ -23,14 +23,13 @@ spec:
           ui:autofocus: true
           ui:options:
             rows: 5
-        owner:
-          title: Owner
-          type: string
-          description: Owner of the component
-          ui:field: OwnerPicker
+        members:
+          title: Members
+          type: string[]
+          description: Unique name of the component
+          ui:autofocus: true
           ui:options:
-            allowedKinds:
-              - Group
+            rows: 5
 
     - title: Choose a location
       required:
