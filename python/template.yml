@@ -1,12 +1,12 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: casf-python-template
+  name: casf-kube-template
   title: Kubernetes
   description: CASF python template kube
   tags:
     - casf
-    - python
+    - kubernetes
 spec:
   owner: web@example.com
   type: service
