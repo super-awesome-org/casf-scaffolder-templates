@@ -2,8 +2,8 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: casf-python-template
-  title: asd
-  description: CASF python template 1
+  title: Kubernetes
+  description: CASF python template kube
   tags:
     - casf
     - python
@@ -46,7 +46,7 @@ spec:
   steps:
     - id: publish
       name: Publish
-      action: publish:githubTeam
+      action: publish:namespace
       input:
         allowedHosts:
           - github.com
