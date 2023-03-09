@@ -22,12 +22,6 @@ spec:
           ui:autofocus: true
           ui:options:
             rows: 5
-        members:
-          type: array
-          items:
-            type: string
-          ui:options:
-            orderable: false
 
     - title: Choose a location
       required:
@@ -36,12 +30,9 @@ spec:
         repoUrl:
           title: Organisation
           type: string
-          ui:field: RepoUrlPicker
           ui:options:
             allowedHosts:
-              - github.com
-            allowedRepos:
-              - backstage
+              - minikube
 
   steps:
     - id: publish
@@ -50,11 +41,7 @@ spec:
       input:
         allowedHosts:
           - github.com
-        description: This is ${{ parameters.name }}
-        repoUrl: ${{ parameters.repoUrl }}
-        teamName: ${{ parameters.name }}
-        teamMembers: ${{ parameters.members}}
-    
+        name: This is ${{ parameters.name }}
   output:
     links:
       - title: Repository
