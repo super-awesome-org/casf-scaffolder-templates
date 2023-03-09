@@ -1,0 +1,64 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: casf-kube-template
+  title: Kubernetes
+  description: CASF python template kube
+  tags:
+    - casf
+    - kubernetes
+spec:
+  owner: web@example.com
+  type: service
+  parameters:
+    - title: Fill in some steps
+      required:
+        - name
+      properties:
+        name:
+          title: Name
+          type: string
+          description: Unique name of the component
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+        members:
+          type: array
+          items:
+            type: string
+          ui:options:
+            orderable: false
+
+    - title: Choose a location
+      required:
+        - repoUrl
+      properties:
+        repoUrl:
+          title: Organisation
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
+            allowedRepos:
+              - backstage
+
+  steps:
+    - id: publish
+      name: Publish
+      action: publish:namespace
+      input:
+        allowedHosts:
+          - github.com
+        description: This is ${{ parameters.name }}
+        repoUrl: ${{ parameters.repoUrl }}
+        teamName: ${{ parameters.name }}
+        teamMembers: ${{ parameters.members}}
+    
+  output:
+    links:
+      - title: Repository
+        url: ${{ steps.publish.output.remoteUrl }}
+      - title: Open in catalog
+        icon: catalog
+        entityRef: ${{ steps.register.output.entityRef }}
