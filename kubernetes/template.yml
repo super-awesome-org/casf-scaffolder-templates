@@ -24,14 +24,12 @@ spec:
             rows: 5
 
     - title: Choose a location
-      required:
-        - repoUrl
       properties:
         repoUrl:
           title: Organisation
           type: string
           ui:options:
-            allowedHosts:
+            allowedRepos:
               - minikube
 
   steps:
@@ -39,8 +37,6 @@ spec:
       name: Publish
       action: publish:namespace
       input:
-        allowedHosts:
-          - github.com
         name: This is ${{ parameters.name }}
   output:
     links:
