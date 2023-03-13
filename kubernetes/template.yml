@@ -21,9 +21,10 @@ spec:
           ui:options:
             rows: 5
     - name: kubernetesCluster
-      title: Kubernetes Cluster
-      type: string
-      enum:
+      type: array
+      items:
+        type: string
+        enum:
         - dev-cluster
         - prod-cluster
 
