@@ -16,6 +16,7 @@ spec:
         name:
           title: Name
           type: string
+          pattern: [a-z0-9]([-a-z0-9]*[a-z0-9])?
           description: Unique name of the component
           ui:autofocus: true
           ui:options:
