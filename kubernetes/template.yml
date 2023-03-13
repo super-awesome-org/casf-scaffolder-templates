@@ -12,8 +12,6 @@ spec:
   type: service
   parameters:
     - title: Fill in some steps
-      required:
-        - name
       properties:
         name:
           title: Name
