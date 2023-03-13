@@ -23,21 +23,12 @@ spec:
           ui:options:
             rows: 5
 
-    - title: Choose a location
-      properties:
-        repoUrl:
-          title: Organisation
-          type: string
-          ui:options:
-            allowedRepos:
-              - minikube
-
   steps:
     - id: publish
       name: Publish
       action: publish:namespace
       input:
-        name: This is ${{ parameters.name }}
+        name: ${{ parameters.name }}
   output:
     links:
       - title: Repository
