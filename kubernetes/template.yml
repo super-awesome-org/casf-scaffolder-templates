@@ -21,11 +21,11 @@ spec:
           ui:options:
             rows: 5
     - name: kubernetesCluster
-      type: array
-      items:
-        type: string
-        enum:
-        - dev-cluster
+      type: string
+      description: The volume type to be used
+      default: minikube
+      enum:
+        - minikube
         - prod-cluster
 
   steps:
@@ -34,10 +34,3 @@ spec:
       action: publish:namespace
       input:
         name: ${{ parameters.name }}
-  output:
-    links:
-      - title: Repository
-        url: ${{ steps.publish.output.remoteUrl }}
-      - title: Open in catalog
-        icon: catalog
-        entityRef: ${{ steps.register.output.entityRef }}
