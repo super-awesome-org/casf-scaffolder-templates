@@ -20,14 +20,14 @@ spec:
           ui:autofocus: true
           ui:options:
             rows: 5
-    - name: kubernetesCluster
-      type: string
-      description: The volume type to be used
-      default: minikube
-      enum:
-        - minikube
-        - prod-cluster
-
+        cluster:
+          title: Cluster
+          type: string
+          description: The volume type to be used
+          default: minikube
+          enum:
+            - minikube
+            - prod-cluster
   steps:
     - id: publish
       name: Publish
