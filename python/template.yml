@@ -8,6 +8,7 @@ metadata:
     - casf
     - python
     - neno
+    - test
 spec:
   owner: tobias.estefors@teliacompany.com
   type: service
@@ -79,7 +80,8 @@ spec:
         deleteBranchOnMerge: true
         requireCodeOwnerReviews: true
         requiredApprovingReviewCount: 1
-
+        repoVisibility: "internal"
+ 
     - id: register
       if: ${{ parameters.dryRun !== true }}
       name: Register
