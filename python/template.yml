@@ -9,15 +9,6 @@ metadata:
     - python
     - hej
 spec:
-  github:
-    branchProtectionRules:
-      - pattern: master
-        requiresApprovingReviews: true
-        requiredApprovingReviewCount: 1
-        requiresCodeOwnerReviews: true
-        dismissesStaleReviews: true
-        restrictsPushes: true
-        restrictsReviewDismissals: true
   owner: tobias.estefors@teliacompany.com
   type: service
   parameters:
@@ -51,6 +42,7 @@ spec:
         - repoUrl
         - dryRun
       properties:
+      
         repoUrl:
           title: Repository Location
           type: string
@@ -83,6 +75,10 @@ spec:
           - github.com
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
+        protectDefaultBranch: true
+        deleteBranchOnMerge: true
+        requireCodeOwnerReviews: true
+        requiredApprovingReviewCount: 1
 
     - id: register
       if: ${{ parameters.dryRun !== true }}
