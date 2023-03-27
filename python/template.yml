@@ -9,6 +9,15 @@ metadata:
     - python
     - hej
 spec:
+  github:
+    branchProtectionRules:
+      - pattern: master
+        requiresApprovingReviews: true
+        requiredApprovingReviewCount: 1
+        requiresCodeOwnerReviews: true
+        dismissesStaleReviews: true
+        restrictsPushes: true
+        restrictsReviewDismissals: true
   owner: tobias.estefors@teliacompany.com
   type: service
   parameters:
@@ -83,15 +92,7 @@ spec:
         repoContentsUrl: ${{ steps.publish.output.repoContentsUrl }}
         catalogInfoPath: '/catalog-info.yaml'
 
-  github:
-    branchProtectionRules:
-      - pattern: master
-        requiresApprovingReviews: true
-        requiredApprovingReviewCount: 1
-        requiresCodeOwnerReviews: true
-        dismissesStaleReviews: true
-        restrictsPushes: true
-        restrictsReviewDismissals: true
+
   output:
     links:
       - title: Repository
